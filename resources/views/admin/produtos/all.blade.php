@@ -4,6 +4,8 @@
 
 @section('content_header')
     <h1>Produto</h1>
+    <br>
+    <button type="button" class="btn btn-primary">Criar Produto</button>
 @stop
 
 @section('content')
@@ -23,7 +25,11 @@
                                             <td class="sorting_1">{{$produto->nome}}</td>
                                             <td>{{$produto->preco}}</td>
                                             <td>{{$produto->descricao}}</td>
-                                            <td>Deletar, Visualizar e Editar</td>
+                                            <td>
+                                                <button type="button" class="visualizaModal btn btn-primary" data-toggle="modal" data-target="#modalvisualizar">Visualizar</button>
+                                                <button type="button" class="editaModal btn btn-warning" data-toggle="modal" data-target="#editarModal">Editar</button>
+                                                <button type="button" class="DeletaModal btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">Deletar</button>
+                                            </td>
                                         </tr>
                                         @endforeach
 </tbody>
@@ -36,4 +42,66 @@
                 </div>
                 <!-- /.box -->
     </section>
+    <!-- Modal Editar -->
+    <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Editando formulario
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Visualizar-->
+    <div class="modal fade" id="modalvisualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Visualizando Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Visualizando formulario
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal deletar-->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deletando modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deletando modal
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <scr
 @stop
