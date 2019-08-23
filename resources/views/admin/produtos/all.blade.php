@@ -20,7 +20,7 @@
                                         <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Nome</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Preço</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Descrição</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Ações</th></tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($produto as $produto)
+                                        @foreach($produtos as $produto)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{$produto->nome}}</td>
                                             <td>{{$produto->preco}}</td>
@@ -38,6 +38,7 @@
                                         </tfoot>
                                     </table></div></div>
                     </div>
+                        {{$produtos->links()}}
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
