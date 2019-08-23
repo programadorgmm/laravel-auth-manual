@@ -26,9 +26,9 @@
                                             <td>{{$produto->preco}}</td>
                                             <td>{{$produto->descricao}}</td>
                                             <td>
-                                                <button type="button" class="visualizaModal btn btn-primary" data-toggle="modal" data-target="#modalvisualizar">Visualizar</button>
-                                                <button type="button" class="editaModal btn btn-warning" data-toggle="modal" data-target="#editarModal">Editar</button>
-                                                <button type="button" class="DeletaModal btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">Deletar</button>
+                                                <button type="button" class="visualizaModal btn btn-primary" data-toggle="modal" data-target="#modalvisualizar" data-id="{{$produto->id}}"  data-nome="{{$produto->nome}}" data-preco="{{$produto->preco}}" data-descricao="{{$produto->descricao}}">Visualizar</button>
+                                                <button type="button" class="editaModal btn btn-warning" data-toggle="modal" data-target="#editarModal" data-id="{{$produto->id}}"  data-nome="{{$produto->nome}}" data-preco="{{$produto->preco}}" data-descricao="{{$produto->descricao}}">Editar</button>
+                                                <button type="button" class="DeletaModal btn btn-danger" data-id="{{$produto->id}}"  data-nome="{{$produto->nome}}" data-preco="{{$produto->preco}}" data-descricao="{{$produto->descricao}}" data-toggle="modal" data-target="#confirmDeleteModal">Deletar</button>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -68,17 +68,29 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Visualizando Modal</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Visualizando Produto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    Visualizando formulario
+                <div class="modal-body" >
+                    <div class="form-group">
+<label for=""> Nome: </label>
+                        <p id="nomeView" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">
+                            Preco:
+                        </label>
+                        <p id="precoVIew" />
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Descrição : </label>
+                        <p id="descricaoView"></p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
                 </div>
             </div>
         </div>
