@@ -21,4 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::resource('/admin/produtos', 'ProdutoController');
+Route::group(['middleware' => ['web']], function() {
+    Route::resource('/admin/produtos', 'ProdutoController');
+    Route::post('/admin/addProduto', 'ProdutoController@store');
+});
+

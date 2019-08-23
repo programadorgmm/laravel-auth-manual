@@ -5,7 +5,7 @@
 @section('content_header')
     <h1>Produto</h1>
     <br>
-    <button type="button" class="btn btn-primary">Criar Produto</button>
+    <button type="button" class="criarModal btn btn-primary" data-toggle="modal" data-target="#criarModal">Criar Produto</button>
 @stop
 
 @section('content')
@@ -43,6 +43,53 @@
                 </div>
                 <!-- /.box -->
     </section>
+    <!-- Modal Criar -->
+    <div class="modal fade" id="criarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Adicionar Produto</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputNome" class="col-sm-2 control-label">Nome</label>
+
+                                <div class="col-sm-10">
+                                    <input type="inputNome" class="form-control" id="inputNome" name="inputNome" placeholder="Nome">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPreco" class="col-sm-2 control-label">Preco</label>
+
+                                <div class="col-sm-10">
+                                    <input type="inputPreco" class="form-control" id="inputPreco" name="inputPreco" placeholder="Preço">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescricao" class="col-sm-2 control-label">Descrição</label>
+
+                                <div class="col-sm-10">
+                                    <input type="inputDescricao" class="form-control" id="inputDescricao" name="inputDescricao" placeholder="Desricao">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                            <button type="button" class="btn btn-info pull-right" id="submitCreate">Adicionar</button>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Modal Editar -->
     <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
